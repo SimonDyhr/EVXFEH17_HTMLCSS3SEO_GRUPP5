@@ -1,0 +1,95 @@
+
+// MOBILE
+.Articles{
+    display: grid;
+    grid-template-columns: auto;
+  }
+  
+  #Article-item{
+    overflow: hidden;
+  }
+  
+  #Article-item img{
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-25%);
+    position: relative;
+  }
+
+  .footer {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    background-color: #efefef;
+  }
+
+  #footerBox{
+    padding-bottom: 15px;
+    text-align: center;
+  }
+
+
+  @include respond-to("medium"){
+  /* För Platta */
+  .Articles{
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: 150px 150px 150px 150px;
+  }
+
+  .Articles p {
+      text-align: center;
+  }
+  
+  .footer{
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  #footerBox{
+    padding-bottom: 0px;
+    text-align: left;
+  }
+}
+  
+  /*på desktopen visa inte mobil label*/
+  @include respond-to("large") {
+
+    .Articles{
+      display: grid;
+      grid-template-columns: auto auto 20% auto 20%;
+      grid-template-rows: 150px 150px 150px 150px;
+      grid-template-areas: 
+      "a a b b c"
+      "a a b b c"
+      "f f g e e"
+      "d d g e e";
+  }
+
+  #Article-item{
+      overflow: hidden;
+  }
+
+  #Article-item:nth-child(1){
+      grid-area: a;
+  }
+  #Article-item:nth-child(2){
+      grid-area: b;
+  }
+  #Article-item:nth-child(3){
+      grid-area: c;
+  }
+  #Article-item:nth-child(4){
+      grid-area: d;
+  }
+  #Article-item:nth-child(5){
+      grid-area: e;
+  }
+  #Article-item:nth-child(6){
+      grid-area: f;
+  }
+  #Article-item:nth-child(7){
+      grid-area: g;
+  }
+  }

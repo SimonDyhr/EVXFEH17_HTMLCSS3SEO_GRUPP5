@@ -3,12 +3,9 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
-/*sass map för breakpoints*/
-/*sass breakpoint mixin som använder sass maps ovan*/
 /*font-icon*/
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 /*general styling*/
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 html {
   box-sizing: border-box; }
 
@@ -113,13 +110,12 @@ h2 {
   width: 100%; }
 
 /*på desktopen visa inte mobil label*/
-@media (min-width: 40em) {
+@media (min-width: 35em) {
   #nav label.menu {
     display: none; }
   #nav {
     background: #3B3B3B;
-    font-size: 1em;
-    box-shadow: 0 4px 2px -2px black; }
+    font-size: 1em; }
   /*Sätt till flex på menyn på desktop*/
   #nav > ul {
     display: flex;
@@ -202,44 +198,12 @@ h2 {
   .flex-form li button {
     width: 55%; } }
 
-/*sass map för breakpoints*/
-/*sass breakpoint mixin som använder sass maps ovan*/
-/*font-icon*/
-/*general styling*/
-html {
-  box-sizing: border-box; }
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit; }
-
-html,
-header,
-footer,
-body,
-nav,
-div,
-img,
-a,
-ul,
-li,
-h1,
-h2 {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style-type: none; }
-
 .Articles {
   display: grid;
-  grid-template-columns: auto;
-  grid-gap: 1em;
-  padding: 10px; }
+  grid-template-columns: auto; }
 
 #Article-item {
-  overflow: hidden;
-  border-top: 1px solid black; }
+  overflow: hidden; }
 
 #Article-item img {
   min-width: 100%;
@@ -247,24 +211,52 @@ h2 {
   transform: translate(-25%);
   position: relative; }
 
-.Articles p {
-  text-align: center;
-  padding: 5px; }
+.footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  background-color: #efefef; }
 
-/*på desktopen visa inte mobil label*/
+#footerBox {
+  padding-bottom: 15px;
+  text-align: center; }
+
 @media (min-width: 40em) {
+  /* För Platta */
   .Articles {
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 1em;
-    padding: 10px; }
-  #Article-item {
-    overflow: hidden;
-    border-top: 1px solid black; }
-  #Article-item img {
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%);
-    position: relative; }
+    grid-template-rows: 150px 150px 150px 150px; }
   .Articles p {
-    text-align: center; } }
+    text-align: center; }
+  .footer {
+    display: grid;
+    grid-template-columns: auto auto; }
+  #footerBox {
+    padding-bottom: 0px;
+    text-align: left; } }
+
+/*på desktopen visa inte mobil label*/
+@media (min-width: 62em) {
+  .Articles {
+    display: grid;
+    grid-template-columns: auto auto 20% auto 20%;
+    grid-template-rows: 150px 150px 150px 150px;
+    grid-template-areas: "a a b b c" "a a b b c" "f f g e e" "d d g e e"; }
+  #Article-item {
+    overflow: hidden; }
+  #Article-item:nth-child(1) {
+    grid-area: a; }
+  #Article-item:nth-child(2) {
+    grid-area: b; }
+  #Article-item:nth-child(3) {
+    grid-area: c; }
+  #Article-item:nth-child(4) {
+    grid-area: d; }
+  #Article-item:nth-child(5) {
+    grid-area: e; }
+  #Article-item:nth-child(6) {
+    grid-area: f; }
+  #Article-item:nth-child(7) {
+    grid-area: g; } }
