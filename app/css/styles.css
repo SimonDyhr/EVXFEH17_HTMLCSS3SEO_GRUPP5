@@ -29,7 +29,8 @@ h2 {
   margin: 0;
   padding: 0;
   text-decoration: none;
-  list-style-type: none; }
+  list-style-type: none;
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif; }
 
 /*MENYN*/
 #nav {
@@ -56,7 +57,7 @@ h2 {
   right: 1em;
   top: 0.2em;
   content: "\2261";
-  /*meny ikonet på mobil*/
+  /*meny ikonen på mobil*/
   font-size: 1.8em;
   color: white; }
 
@@ -110,12 +111,13 @@ h2 {
   width: 100%; }
 
 /*på desktopen visa inte mobil label*/
-@media (min-width: 35em) {
+@media (min-width: 62em) {
   #nav label.menu {
     display: none; }
   #nav {
-    background: #3B3B3B;
-    font-size: 1em; }
+    background: white;
+    font-size: 1em;
+    color: black; }
   /*Sätt till flex på menyn på desktop*/
   #nav > ul {
     display: flex;
@@ -126,10 +128,16 @@ h2 {
     padding: 0; }
   #nav a {
     display: block;
-    color: #fff; }
+    color: #000000; }
   #nav ul li {
-    color: #fff;
+    color: #000000;
     transition: 0.5s; }
+  .navLoggo {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-size: 18px; }
   /*förskjut innehållet vänster i menyn förutom för fonticons*/
   #nav ul li:nth-child(6) {
     margin-left: auto;
@@ -139,9 +147,12 @@ h2 {
   li:nth-child(n + 6) {
     display: flex;
     align-items: center; }
+  #nav ul li:nth-child(7) {
+    padding-right: 10px; }
   /*15px över ooch under och 25px padding till höger och vänster */
   #nav > ul > li > a {
-    padding: 15px 25px; }
+    padding: 15px 25px;
+    color: black; }
   /*för li elementet där undermenyn ligger, så använder vi psuedo elementet :after på a elementet för att rita en pil*/
   #nav ul > li.submenu > a:after {
     position: relative;
@@ -152,7 +163,7 @@ h2 {
     margin-top: 8px;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
+    border-top: 5px solid #000000;
     border-bottom: 5px solid transparent; }
   /*vid hover på vår undermeny så vänder vi på pilen*/
   #nav ul > li.submenu:hover > a:after {
@@ -222,6 +233,28 @@ h2 {
   padding-bottom: 15px;
   text-align: center; }
 
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; }
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; }
+
+input[type=submit]:hover {
+  background-color: #45a049; }
+
 @media (min-width: 40em) {
   /* För Platta */
   .Articles {
@@ -232,10 +265,12 @@ h2 {
     text-align: center; }
   .footer {
     display: grid;
-    grid-template-columns: auto auto; }
+    grid-template-columns: 50% 50%; }
   #footerBox {
     padding-bottom: 0px;
-    text-align: left; } }
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px; } }
 
 /*på desktopen visa inte mobil label*/
 @media (min-width: 62em) {

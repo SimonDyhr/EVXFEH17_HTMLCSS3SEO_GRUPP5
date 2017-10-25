@@ -22,7 +22,7 @@
   position: absolute; /*absolut till label*/
   right: 1em;
   top: 0.2em;
-  content: "\2261"; /*meny ikonet på mobil*/
+  content: "\2261"; /*meny ikonen på mobil*/
   font-size: 1.8em;
   color: white;
 }
@@ -87,14 +87,15 @@
 }
 
 /*på desktopen visa inte mobil label*/
-@include respond-to("small") {
+@include respond-to("large") {
   #nav label.menu {
     display: none;
   }
 
   #nav {
-    background: #3B3B3B;
+    background: rgb(255, 255, 255);
     font-size: 1em;
+    color: black;
   }
 
   /*Sätt till flex på menyn på desktop*/
@@ -111,12 +112,20 @@
 
   #nav a {
     display: block;
-    color: #fff;
+    color: #000000;
   }
 
   #nav ul li {
-    color: #fff;
+    color: #000000;
     transition: 0.5s;
+  }
+
+  .navLoggo {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-size: 18px;
   }
 
   /*förskjut innehållet vänster i menyn förutom för fonticons*/
@@ -132,9 +141,14 @@
     align-items: center;
   }
 
+  #nav ul li:nth-child(7) {
+    padding-right: 10px;
+  }
+
  /*15px över ooch under och 25px padding till höger och vänster */ 
   #nav > ul > li > a {
     padding: 15px 25px;
+    color: black;
   }
 
   /*för li elementet där undermenyn ligger, så använder vi psuedo elementet :after på a elementet för att rita en pil*/
@@ -146,7 +160,7 @@
     margin-top: 8px;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid #fff;
+    border-top: 5px solid #000000;
     border-bottom: 5px solid transparent;
   }
 /*vid hover på vår undermeny så vänder vi på pilen*/
